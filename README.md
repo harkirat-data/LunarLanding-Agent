@@ -6,6 +6,29 @@ I undertook this project as a foundational milestone to gain hands-on experience
 
 ---
 
+## Agent Demonstration
+
+<p align="center">
+  <img src="lunarlander_attempts.gif" alt="Lunar Lander PPO Agent In Action" width="650"/>
+</p>
+
+### How the Lander Operates Under the Reward System
+
+The recording above captures 5 consecutive evaluation rollouts executed by the trained PPO policy. In this demonstration, the agent visibly navigates the mathematical trade-offs built into the environment's reward function:
+
+1. **Trajectory & Target Alignment ($x \to 0$, $y \to 0$):**
+   - The agent is rewarded positively for reducing its distance to the landing pad located between the two flags. Upon spawning at the top of the frame with randomized initial momentum, it immediately identifies the target coordinates and maneuvers laterally toward the center.
+2. **Attitude Stabilization via Lateral Thrusters:**
+   - Tilting excessively or rotating rapidly is heavily penalized. The policy uses short, calculated bursts of the left and right thrusters (costing only $-0.03$ points per frame) to cancel angular velocity ($\omega$) and keep the craft upright.
+3. **Controlled Descent & Fuel Economy:**
+   - Gravity naturally accelerates the craft downwards. While firing the main engine costs $-0.30$ points per frame in fuel, crashing imposes a severe $-100$ penalty. The agent avoids firing the engine continuously; instead, it uses pulsed throttle bursts to arrest downward velocity ($v_y$) just in time as it approaches ground level.
+4. **Soft Touchdown & Engine Cutoff:**
+   - Each leg touching the surface yields $+10$ points, and coming to a complete, stable rest awards $+100$ bonus points. As soon as both legs make contact, the agent cuts the engine to prevent bouncing or flipping, consistently securing episode returns between **$+233$** and **$+279$**.
+
+*(The original video recording is also tracked in the repository as [lunarlander_attempts.mp4](lunarlander_attempts.mp4))*
+
+---
+
 ## Environment Overview
 
 The **LunarLander-v3** environment (Box2D physics engine) simulates the landing of a lunar module onto a designated landing pad:
