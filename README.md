@@ -1,4 +1,4 @@
-# Lunar Landing Agent — Deep Reinforcement Learning
+# Lunar Landing Agent: Deep Reinforcement Learning
 
 This repository documents my first project in deep reinforcement learning (RL), where I trained an autonomous agent to master the classic **LunarLander-v3** environment from Gymnasium. 
 
@@ -93,9 +93,3 @@ pip install "gymnasium[box2d]" stable-baselines3 huggingface-sb3 pyvirtualdispla
 
 ---
 
-## Future Roadmap
-
-This repository represents the inception of my reinforcement learning work. Upcoming directions I plan to explore include:
-- Benchmarking continuous action spaces (`LunarLanderContinuous-v3`) with **Soft Actor-Critic (SAC)** and **TD3**.
-- Implementing value-based methods (DQN, Double DQN, Dueling DQN) from scratch in PyTorch.
-- Exploring visual observation environments (pixel-based Atari / MuJoCo) with Convolutional Policy networks.
