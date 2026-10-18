@@ -1,5 +1,7 @@
 # Lunar Landing Agent: Deep Reinforcement Learning
 
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-WaMp96%2FPPO--LunarLander--v3-ffd21e)](https://huggingface.co/WaMp96/PPO-LunarLander-v3)
+
 This repository documents my first project in deep reinforcement learning (RL), where I trained an autonomous agent to master the classic **LunarLander-v3** environment from Gymnasium. 
 
 I undertook this project as a foundational milestone to gain hands-on experience with policy-gradient methods, reward shaping dynamics, and actor-critic architectures. Moving forward, I plan to expand on this foundation with further implementations exploring off-policy algorithms, continuous control tasks, and multi-agent systems.
